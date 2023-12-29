@@ -1,8 +1,8 @@
 # frozen_string_literal: true
-require "active_storage_ftp/ex_ftp"
-require "active_storage_ftp/ex_ftptls"
-require "digest/md5"
-require "active_support/core_ext/numeric/bytes"
+require 'active_storage_ftp/ex_ftp'
+require 'active_storage_ftp/ex_ftptls'
+require 'digest/md5'
+require 'active_support/core_ext/numeric/bytes'
 
 module ActiveStorage
 
@@ -117,7 +117,7 @@ module ActiveStorage
     end
 
     def headers_for_direct_upload(key, content_type:, **)
-      {"Content-Type" => content_type}
+      {'Content-Type' => content_type}
     end
 
     def path_for(key) #:nodoc:
@@ -129,7 +129,7 @@ module ActiveStorage
     attr_reader :config
 
     def folder_for(key)
-      [key[0..1], key[2..3]].join("/")
+      [key[0..1], key[2..3]].join('/')
     end
 
     def ensure_integrity_of(key, checksum)

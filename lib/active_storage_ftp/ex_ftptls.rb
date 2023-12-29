@@ -19,6 +19,7 @@ class ExFTPTLS < DoubleBagFTPS
         mkdir(growing_path)
         chdir(growing_path)
       rescue Net::FTPPermError, Net::FTPTempError => e
+        # Ignored
       end
     end
   end
